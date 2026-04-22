@@ -41,7 +41,7 @@ void	*monitor_routine(void *arg)
 				return (NULL);
 			i++;
 		}
-		usleep(1000);
+		usleep(5);  // ← 5ms instead of no sleep (better precision)
 	}
 	return (NULL);
 }
