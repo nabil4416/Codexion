@@ -88,6 +88,8 @@ static int	wait_and_take_dongle(t_coder *coder, t_dongle *dongle)
 			pthread_mutex_unlock(&dongle->mutex);
 			return (SUCCESS);
 		}
+		// ← OPTION: Can add pthread_cond_timedwait() here
+		// But current usleep(500) is acceptable
 		pthread_mutex_unlock(&dongle->mutex);
 		usleep(500);
 	}
